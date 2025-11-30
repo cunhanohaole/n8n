@@ -4,16 +4,7 @@ services:
     env: docker
     plan: free
     autoDeploy: true
-    envVars:
-      - key: N8N_BASIC_AUTH_ACTIVE
-        value: true
-      - key: N8N_BASIC_AUTH_USER
-        value: buddy
-      - key: N8N_BASIC_AUTH_PASSWORD
-        value: YourSecurePass123
-      - key: N8N_ENCRYPTION_KEY
-        value: MyStrongEncryptionKey987
-      - key: WEBHOOK_URL
-        value: https://buddy-n8n.onrender.com
-      - key: GENERIC_TIMEZONE
-        value: Europe/Lisbon
+    disk:
+      name: n8n_data
+      mountPath: /home/node/.n8n
+      sizeGB: 1
